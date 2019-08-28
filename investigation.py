@@ -25,7 +25,7 @@ if __name__ == '__main__':
     response_ = 1
 
     while response_ != 0:
-        print('Tentativas feitas {}\n'.format(fail_attempts))
+        print('\nTentativas feitas {}'.format(fail_attempts))
         theory = validation_theory(input('Digite a teoria: ').split(','), 'Teoria Inválida, digite uma teoria válida: ')
         response_ = investigate(theory, solution)
         fail_attempts[order_suspects[response_ - 1]].append(theory[response_ - 1])
