@@ -30,6 +30,9 @@ class Test_Investigation(unittest.TestCase):
     def test_return_2_or_3_when_place_or_weapon(self):
         self.assertIn(investigate(('2', '3', '4'), self.solution), [2, 3])
         self.assertIn(investigate(('2', '1', '5'), self.solution), [2, 3])
+        
+    def test_return_0_when_all_correct(self):
+        self.assertEqual(investigate(('2', '4', '3'), self.solution), 0)
 
 
 if __name__ == '__main__':
