@@ -3,9 +3,11 @@ import random
 
 
 def validation_theory(theory, msg):
+    """ Checks if theory length is 3 and if all elements are digits, if fail, a new input is needed """
     return theory if len(theory) == 3 and ''.join(theory).isdigit() else validation_theory(input(msg).split(','),msg)
 
 def investigate(theory, solution):
+    """ Checks if one or more elements are different from solution and return one of them or 0 """
     errors = list(i+1 for i in range(0,3) if solution[i] != theory[i])
     return random.choice(errors) if errors else 0
 
